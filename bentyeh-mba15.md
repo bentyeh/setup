@@ -48,7 +48,7 @@ Formulas
 Install basictex via homebrew: `brew install basictex`
 - Update TeX Live package manager (`sudo tlmgr update --self`)
 - Update TeX packages (`sudo tlmgr update --all`)
-- Install new packages (`sudo tlmgr install enumitem latexmk`)
+- Install new packages (`sudo tlmgr install enumitem latexmk minted ieeetran`)
   - `latexmk` is the LaTeX compiler used by the default build recipe of LaTeX Workshop for VS Code.
 - Add build recipes for VS Code LaTeX Workshop: `pdftex * 3`
 
