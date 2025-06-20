@@ -1,0 +1,36 @@
+# Last updated 11/21/2022
+#
+# install with
+# conda env update -f py3.yml --prune
+#
+name: py3
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python>=3.8
+  - biopython
+  - black
+  - bs4
+  - conda-forge::zeep
+  - editdistance
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - openpyxl
+  - pandas
+  - pillow
+  - pip
+  - plotly::plotly
+  - pytorch::cpuonly
+  - pytorch::torchvision
+  - requests
+  - scikit-image
+  - scikit-learn
+  - scipy>=1.8
+  - seaborn
+  - statsmodels
+  - tensorflow
+  - tqdm
+  - ipympl>=0.9.3
+  - scikit-optimize

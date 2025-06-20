@@ -1,0 +1,14 @@
+# Last updated 11/21/2022
+#
+# install with
+# conda env update -f bio.yml --prune
+#
+name: bio
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+dependencies:
+  - bioconda::samtools>=1.16
+  - bioconda::htslib>=1.17
+  - bioconda::bedtools>=2.30

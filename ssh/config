@@ -1,0 +1,21 @@
+# References
+# - https://www.sherlock.stanford.edu/docs/advanced-topics/connection/#avoiding-multiple-duo-prompts
+# - https://srcc.stanford.edu/farmshare2/connecting
+# - http://issm.ess.uci.edu/trac/issm/wiki/sherlock
+
+Host caltech
+    HostName login2.hpc.caltech.edu
+    User btyeh
+    ControlMaster auto
+    ControlPersist yes
+
+Host sherlock
+    HostName login.sherlock.stanford.edu
+    User bentyeh
+
+Host sherlock login.sherlock.stanford.edu sh-ln0?.stanford.edu
+    ControlMaster auto
+    ControlPersist yes
+
+Host *
+    ControlPath ~/.ssh/%l%r@%h:%p

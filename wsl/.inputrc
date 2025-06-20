@@ -1,0 +1,2 @@
+# see https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File.html
+set bell-style none

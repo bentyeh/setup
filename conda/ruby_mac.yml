@@ -1,0 +1,18 @@
+# Source: https://github.com/chrisyeh96/chrisyeh96.github.io/blob/main/env_ruby.yml
+# Install or update environment
+# conda env update -f gh-pages_mac.yml --prune
+#
+# Remove environment
+# conda remove --name ruby --all
+#
+# Notes
+# - see https://pages.github.com/versions/ for supported version of ruby
+# - last updated: October 5, 2023
+name: ruby
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - ruby=2.7
+  - clang_osx-arm64=16.0.6
+  - clangxx_osx-arm64=16.0.6

@@ -1,0 +1,14 @@
+[core]
+    # set autocrlf to "true" on Windows, and "input" on macOS or Linux
+    autocrlf = input
+    # global .gitignore file
+    excludesfile = /Users/bentyeh/.gitignore_global
+[user]
+    name = Benjamin Yeh
+    email = bentyeh@users.noreply.github.com
+[credential]
+    # Store credentials indefinitely on disk - see https://chrisyeh96.github.io/2021/08/13/github-personal-access-tokens.html
+    helper = store
+[init]
+    # Use "main" as default branch name, instead of "master"
+    defaultBranch = main

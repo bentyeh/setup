@@ -1,0 +1,2 @@
+solver: libmamba
+auto_activate_base: false

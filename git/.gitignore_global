@@ -1,0 +1,7 @@
+# Set global .gitignore via the following command:
+#   git config --global core.excludesfile ~/.gitignore_global
+
+# OS files
+Thumbs.db
+.DS_Store
+
