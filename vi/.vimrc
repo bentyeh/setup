@@ -1,4 +1,18 @@
-"""" Basic Behavior
+"""" Enable Vundle: vim plugin manager
+
+" required before Vundle initialization
+"set nocompatible        " disable compatibility mode with vi
+"filetype off            " disable filetype detection (but re-enable later, see below)
+
+" set the runtime path to include Vundle, and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'wting/rust.vim' " enable syntax highlighting for rust
+"call vundle#end()
+
+
+"""" Basic behavior
 
 set number              " show line numbers
 set wrap                " wrap lines
@@ -31,6 +45,13 @@ nmap k gk
 
 syntax on               " Turn syntax highlighting on.
 
+" put colorscheme files in ~/.vim/colors/
+"colorscheme murphy      " good colorschemes: murphy, slate, molokai, badwolf, solarized
+
+" use filetype-based syntax highlighting, ftplugins, and indentation
+"syntax enable
+"filetype plugin indent on
+
 
 """" Tab settings
 
@@ -51,3 +72,10 @@ set ignorecase          " ignore case when searching
 
 " turn off search highlighting with <CR> (carriage-return)
 nnoremap <CR> :nohlsearch<CR><CR>
+
+
+"""" Miscellaneous settings that might be worth enabling
+
+"set cursorline         " highlight current line
+"set background=dark    " configure Vim to use brighter colors
+"set autoread           " autoreload the file in Vim if it has been changed outside of Vim
