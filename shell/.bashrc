@@ -116,10 +116,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-### Added by bentyeh ###
+#############################
+### bentyeh modifications ###
+#############################
+# The previous content is largely from the default bashrc file in Ubuntu 20.04 (i.e., at /etc/skel/.bashrc)
+
+#region For WSL only
 if [ -z $DISPLAY ]; then
     export DISPLAY=:0
 fi
+#endregion
 
 # `ls` command: do not background highlight OTHER_WRITABLE directories
 # - more information: man dir_colors
@@ -128,9 +134,11 @@ LS_COLORS=$(echo $LS_COLORS | sed -e "s/ow=34;42/ow=34/g")
 # Add local man pages
 MANPATH="$HOME/share/man:$MANPATH"
 
-alias ll='ls -lhF'
-alias columns="column -t -s $'\t'"
-### ---------------- ###
+# Custom aliases
+alias ll='ls -lhF' # replace `alias ll=ls -alF` in the default bashrc
+alias columns="column -t -s $'\t'" # column is from the util-linux package
+
+#region Added by conda init
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -147,3 +155,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+#endregion
