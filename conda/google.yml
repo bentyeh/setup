@@ -1,0 +1,13 @@
+# Last updated 2025-11-29
+# 
+# install with
+# conda env update -f google.yml --prune
+#
+name: google
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - google-auth-oauthlib=1.2.3
+  - google-api-python-client=2.187.0
+  - google-auth-httplib2=0.2.1
