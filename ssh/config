@@ -3,11 +3,22 @@
 # - https://srcc.stanford.edu/farmshare2/connecting
 # - http://issm.ess.uci.edu/trac/issm/wiki/sherlock
 
-Host caltech
-    HostName login2.hpc.caltech.edu
+Host login.hpc.caltech.edu
     User btyeh
     ControlMaster auto
     ControlPersist yes
+
+Host caltech
+    HostName login3.hpc.caltech.edu
+    User btyeh
+    ControlMaster auto
+    ControlPersist yes
+    IdentityFile ~/.ssh/id_ed25519-caltech
+
+Host hpc-*-*
+    HostName %h
+    User btyeh
+    ProxyJump caltech
 
 Host sherlock
     HostName login.sherlock.stanford.edu
@@ -17,5 +28,24 @@ Host sherlock login.sherlock.stanford.edu sh-ln0?.stanford.edu
     ControlMaster auto
     ControlPersist yes
 
+Host github.com
+    IdentityFile ~/.ssh/id_ed25519
+
 Host *
+    # Specifies where to store the 'control socket' for connection sharing.
+    # %l = local hostname, %r = remote username, %h = remote host, %p = port.
+    # This allows multiple SSH sessions to share a single authenticated connection
+    # (e.g., to bypass repeated Duo/MFA prompts).
     ControlPath ~/.ssh/%l%r@%h:%p
+
+    # Automatically load the private key into the ssh-agent (RAM) the first time
+    # you use it, instead of having to manually run 'ssh-add <path_to_key>' upon
+    # each reboot.
+    AddKeysToAgent yes
+
+    # Tells SSH to look in the macOS System Keychain for the passphrase to the
+    # private key, if a passphrase was set up during the generation of the private
+    # key by ssh-keygen. If found, it unlocks the key without asking for the passphrase.
+    # UseKeychain is a macOS-specific extension added by Apple to the OpenSSH client
+    # shipped with macOS.
+    UseKeychain yes
